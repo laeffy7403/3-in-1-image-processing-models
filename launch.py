@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Integrated Launcher — Final_Group4
+Integrated Launcher — 3_in_1_Image_Processing_Model
 Shows a menu and runs the selected model in the same terminal.
 
-Usage (from Final_Group4/, with root .venv activated):
+Usage (from 3_in_1_Image_Processing_Model/, with root .venv activated):
     python launch.py
 """
 
@@ -37,7 +37,7 @@ MODELS = [
 def print_menu():
     print()
     print("=" * 55)
-    print("        AI Model Launcher — Final Group 4")
+    print("        AI Model Launcher — 3_in_1_Image_Processing_Model")
     print("=" * 55)
     for i, m in enumerate(MODELS, 1):
         print(f"  {i}. {m['label']}")
