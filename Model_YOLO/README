@@ -1,0 +1,103 @@
+
+---
+
+## Project Setup & Usage Guide
+
+### 1. Environment Setup
+
+Create a virtual environment and install the required dependencies:
+
+```bash
+'python -m venv .venv'
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+'pip install -r requirements.txt'
+```
+
+---
+
+### 2. Dataset Structure (Required)
+
+Due to GitHub file size limitations, the dataset is **not included** in this repository. You must prepare your own dataset locally using the structure below.
+
+Create a directory named `dataset` with the following layout:
+
+```
+dataset/
+├── images/
+│   ├── cat/
+│   └── dog/
+└── labels/
+```
+
+**Explanation:**
+
+* `dataset/` → Main dataset directory
+* `images/` → Contains one subfolder per object class (e.g., `cat`, `dog`)
+* `labels/` → YOLO-format label files (automatically generated)
+
+⚠️ **Important:**
+Only raw images are required initially. The `labels/` folder will be generated automatically during the labeling step.
+
+---
+
+### 3. Auto-Labeling & Dataset Configuration
+
+Run the following script to:
+
+* Auto-generate YOLO label files
+* Create the `dataset.yaml` configuration file
+
+
+'python label_dataset.py'
+
+
+After this step, your dataset will be fully prepared for training.
+
+---
+
+### 4. Model Training & Real-Time Tracking
+
+Train the YOLOv8 model using the generated `dataset.yaml` file:
+
+
+'python train_and_track.py'
+
+
+**Notes:**
+
+* Training time depends on dataset size and hardware performance.
+* Once training completes:
+
+  * A **live camera window** will open showing real-time object tracking.
+  * Training metrics and graphs (loss, precision, recall, etc.) will be saved to:
+
+    ```
+    runs/detect/custom/
+    ```
+
+---
+
+### 5. Re-Testing Without Retraining
+
+If you want to test the trained model **without running training again**, use:
+
+
+'python track_yolo.py'
+
+
+This script loads the `best.pt` weights generated during training and performs real-time tracking directly.
+
+---
+
+### 6. GPU Verification
+
+To verify whether training is using **GPU or CPU**, run:
+
+
+'python test_gpu.py'
+
+
+This script checks hardware availability and confirms if GPU acceleration is enabled.
+
+---
+

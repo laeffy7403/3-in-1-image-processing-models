@@ -1,0 +1,7 @@
+__pycache__
+
+.venv/
+.vscode/
+dataset/
+static/
+dog_breed_test/
