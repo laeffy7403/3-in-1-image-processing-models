@@ -13,9 +13,9 @@ Rather than running three standalone models independently and dealing with the o
 ## Model Compression
 A major focus of this project was optimization. Initially, the combined models and their environments required a massive **21 GB** of storage space.
 
-Inspired by the compression techniques used by Arrowhead Game Studios for *Helldivers 2* (which reduced their game footprint from 80 GB to 20 GB), I applied similar optimization strategies to our models. 
+Inspired by the compression techniques used by Arrowhead Game Studios for *Helldivers 2* (which reduced their game footprint from 80 GB to 20 GB), I applied similar optimization strategies to our models without effecting the performance. 
 
-We successfully compressed the total project size from **21 GB down to just 3 GB**. This significant reduction in size was achieved while maintaining the original performance and accuracy of all three models.
+I successfully compressed the total project size from **21 GB down to just 3 GB**. This significant reduction in size was achieved while maintaining the original performance of all three models.
 
 ## Future Plans
-While this began as a university assignment, my long-term goal is to continue scaling and improving the capabilities of this system. I aim to refine it into a robust, powerful tool that can provide practical value for real-world computer vision applications.
+While this began as a university assignment, my long-term goal is to continue scaling and improving the capabilities of this system (if possible). I aim to refine it into a powerful tool that can actually provide value for real-world computer vision applications.
